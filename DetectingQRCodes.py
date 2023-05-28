@@ -42,6 +42,9 @@ while True:
     ret, frame = capture.read()
     QRCode_data = read_QRCode(frame)
     cv2.imshow("QR Code Reader", frame)
+    
+    if QRCode_data is not None:
+        print("QRCode lido: ", QRCode_data)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
